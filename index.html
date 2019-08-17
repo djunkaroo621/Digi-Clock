@@ -4,10 +4,14 @@
   <title>Digital Clock</title>
   <style>
 
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
 .main-section {
 background-image: url("http://www.siue.edu/~mhallor/madisonrobertsphotography1/background.png");
 text-align: center;
-margin-top: 300px;
+margin-top: 200px;
 }
 
 #header-title {
@@ -16,14 +20,17 @@ font-size: 64px;
 
 #hours {
 font-size: 50px;
+margin-top: 50px;
 }
 
 #minutes {
 font-size: 50px;
+margin-top: 50px;
 }
 
 #seconds {
 font-size: 50px;
+margin-top: 50px;
 }
 
   </style>
@@ -35,10 +42,16 @@ font-size: 50px;
 
 <h1 id="header-title">DIGITAL CLOCK</h1>
 
-<div>
-<p id="hours"></p>
-<p id="minutes"></p>
-<p id="seconds"></p>
+<div class = "grid-container">
+  <div class = "guts">
+    <p id="hours"></p>
+  </div>
+  <div class = "guts">
+    <p id="minutes"></p>
+  </div>
+  <div class = "guts">
+    <p id="seconds"></p>
+  </div>
 </div>
 
 <script src="code.js">
