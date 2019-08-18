@@ -13,7 +13,5 @@ function timer() {
 document.getElementById("seconds").innerHTML = s++;
 }
 
-document.getElementById("seconds").innerHTML = s;
-
 var demo = document.getElementById("header-title");
 demo.innerHTML ="Digital Clock";
