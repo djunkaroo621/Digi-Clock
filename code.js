@@ -5,6 +5,14 @@ var s = d.getSeconds();
 
 document.getElementById("hours").innerHTML = h - 12;
 document.getElementById("minutes").innerHTML = m;
+
+
+setInterval(timer, 1000);
+
+function timer() {
+document.getElementById("seconds").innerHTML = s++;
+}
+
 document.getElementById("seconds").innerHTML = s;
 
 var demo = document.getElementById("header-title");
