@@ -10,11 +10,10 @@ setInterval(timer1, 1000);
 
 function timer1() {
 document.getElementById("hours").innerHTML = h++;
-if (h > 12) {
+if (h > 24) {
   h = 1;
 }
 }
-
 
 document.getElementById("hours").innerHTML = m;
 
@@ -36,6 +35,16 @@ function timer3() {
 document.getElementById("seconds").innerHTML = s++;
 if (s > 60) {
   s = 0;
+}
+}
+
+setInterval(timer4, 1000);
+
+function timer4() {
+if (h >= 12) {
+  document.getElementById("mornOrNight").innerHTML = "PM";
+} else if (h < 12 || h === 24) {
+  document.getElementById("mornOrNight").innerHTML = "AM";
 }
 }
 

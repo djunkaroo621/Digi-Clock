@@ -6,12 +6,13 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns:auto auto auto;
 }
 .main-section {
 background-image: url("http://www.siue.edu/~mhallor/madisonrobertsphotography1/background.png");
 text-align: center;
 margin-top: 200px;
+font-family: sans-serif;
 }
 
 #header-title {
@@ -33,6 +34,12 @@ font-size: 50px;
 margin-top: 50px;
 }
 
+#mornOrNight {
+font-size: 50px;
+
+
+}
+
   </style>
   <script>
   </script>
@@ -43,14 +50,23 @@ margin-top: 50px;
 <h1 id="header-title">DIGITAL CLOCK</h1>
 
 <div class = "grid-container">
-  <div class = "guts">
+  <div>
     <p id="hours"></p>
   </div>
-  <div class = "guts">
+  <div>
     <p id="minutes"></p>
   </div>
-  <div class = "guts">
+  <div>
     <p id="seconds"></p>
+  </div>
+  <div>
+    <p class="empty"></p>
+  </div>
+  <div>
+    <p class="empty"></p>
+  </div>
+  <div>
+    <p id="mornOrNight"></p>
   </div>
 </div>
 
