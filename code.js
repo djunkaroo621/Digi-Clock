@@ -11,6 +11,9 @@ setInterval(timer, 1000);
 
 function timer() {
 document.getElementById("seconds").innerHTML = s++;
+if (s > 60) {
+  s = 0;
+}
 }
 
 var demo = document.getElementById("header-title");
