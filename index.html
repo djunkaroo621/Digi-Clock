@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Digital Clock</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto;
+      text-align: center;
+    }
+
+    .main-section {
+      background-image: url("http://www.siue.edu/~mhallor/madisonrobertsphotography1/background.png");
+      text-align: center;
+      margin-top: 200px;
+      font-family: sans-serif;
+    }
+
+    #time {
+      font-size: 40px;
+      margin-top: 30px;
+    }
+
+    #date {
+      font-size: 40px;
+      margin-top: 30px;
+    }
+
+    #mornOrNight {
+      font-size: 40px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body class = "main-section">
+
+<div class = "grid-container">
+<div>
+  <p id="time"></p>
+</div>
+<div>
+  <p id="date"></p>
+</div>
+<div>
+  <p id="mornOrNight"></p>
+</div>
+
+<script>
+
+  // Assigning variables for the native Javascript functions
+  var d = new Date();
+  var h = d.getHours();
+  var m = d.getMinutes();
+  var s = d.getSeconds();
+  var dayW = d.getUTCDay();
+  var monthVar = d.getMonth();
+  var day = d.getDate();
+  var year = d.getUTCFullYear();
+
+  setInterval(timer1, 1000);
+
+  function timer1() {
+
+    let gHours = new Date().getHours();
+    let gMinutes = new Date().getMinutes();
+    let gSeconds = new Date().getSeconds();
+    let gDayOfWeek = new Date().getUTCDay();
+
+    var whichDay;
+     if (gDayOfWeek === 1) {
+       let whichDay = "Monday";
+     } else if (gDayOfWeek === 2) {
+       let whichDay = "Tuesday";
+     } else if (gDayOfWeek === 3) {
+       let whichDay = "Wednesday";
+     } else if (gDayOfWeek === 4) {
+       let whichDay = "Thursday";
+     } else if (gDayOfWeek === 5) {
+       let whichDay = "Friday";
+     } else if (gDayOfWeek === 6) {
+       let whichDay = "Saturday";
+     } else if (gDayOfWeek === 7) {
+       let whichDay = "Sunday";
+     }
+
+    let gMonth = new Date().getMonth() + 1;
+    let gDate = new Date().getDate();
+    let gFullYear = new Date().getUTCFullYear();
+
+document.getElementById("time").innerHTML = gHours + ":" + gMinutes + ":" + gSeconds;
+document.getElementById("date").innerHTML = whichDay + " " + gMonth + "/" + gDate + "/" + gFullYear;
+
+
+  if (h >= 12) {
+      document.getElementById("mornOrNight").innerHTML= "PM";
+    } else if (h < 12 || h === 24) {
+      document.getElementById("mornOrNight").innerHTML = "AM";
+    }
+
+  }
+
+</script>
+</body>
+</html>
