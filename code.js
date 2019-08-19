@@ -45,10 +45,11 @@ if (document.getElementById("dayW").innerHTML = 1) {
 document.getElementById("month").innerHTML = new Date().getMonth() + 1;
 document.getElementById("day").innerHTML = new Date().getDate();
 document.getElementById("year").innerHTML = new Date().getUTCFullYear();
-}
 
 if (h >= 12) {
     document.getElementById("mornOrNight").innerHTML = "PM";
   } else if (h < 12 || h === 24) {
     document.getElementById("mornOrNight").innerHTML = "AM";
   }
+
+}
