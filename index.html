@@ -6,58 +6,46 @@
     .grid-container {
       display: grid;
       grid-template-columns: auto;
-      text-align: center;
+      grid-template-rows: auto;
     }
-
     .main-section {
       background-image: url("http://www.siue.edu/~mhallor/madisonrobertsphotography1/background.png");
       text-align: center;
-      margin-top: 200px;
+      margin-top: 100px;
       font-family: sans-serif;
     }
-
     #time {
-      font-size: 40px;
-      margin-top: 30px;
+      font-size: 80px;
+      margin-top: 10px;
     }
-
-    #date {
-      font-size: 40px;
-      margin-top: 30px;
-    }
-
     #mornOrNight {
-      font-size: 40px;
-      margin-top: 30px;
+      font-size: 80px;
+      margin-top: 10px;
+    }
+    #weekDay {
+      font-size: 80px;
+      margin-top: 10px;
+    }
+    #date {
+      font-size: 80px;
+      margin-top: 10px;
     }
   </style>
 </head>
 
 <body class = "main-section">
-
 <div class = "grid-container">
+  <div>
+    <p id="time"></p>
+  </div>
 <div>
-  <p id="time"></p>
+  <p id="weekDay"></p>
 </div>
 <div>
   <p id="date"></p>
 </div>
-<div>
-  <p id="mornOrNight"></p>
 </div>
-
 <script>
-
-  // Assigning variables for the native Javascript functions
-  var d = new Date();
-  var h = d.getHours();
-  var m = d.getMinutes();
-  var s = d.getSeconds();
-  var dayW = d.getUTCDay();
-  var monthVar = d.getMonth();
-  var day = d.getDate();
-  var year = d.getUTCFullYear();
-
   setInterval(timer1, 1000);
 
   function timer1() {
@@ -67,38 +55,43 @@
     let gSeconds = new Date().getSeconds();
     let gDayOfWeek = new Date().getUTCDay();
 
-    var whichDay;
+
      if (gDayOfWeek === 1) {
-       let whichDay = "Monday";
+       document.getElementById("weekDay").innerHTML = "Monday";
      } else if (gDayOfWeek === 2) {
-       let whichDay = "Tuesday";
+       document.getElementById("weekDay").innerHTML = "Tuesday";
      } else if (gDayOfWeek === 3) {
-       let whichDay = "Wednesday";
+       document.getElementById("weekDay").innerHTML = "Wednesday";
      } else if (gDayOfWeek === 4) {
-       let whichDay = "Thursday";
+       document.getElementById("weekDay").innerHTML = "Thursday";
      } else if (gDayOfWeek === 5) {
-       let whichDay = "Friday";
+       document.getElementById("weekDay").innerHTML = "Friday";
      } else if (gDayOfWeek === 6) {
-       let whichDay = "Saturday";
+       document.getElementById("weekDay").innerHTML = "Saturday";
      } else if (gDayOfWeek === 7) {
-       let whichDay = "Sunday";
+       document.getElementById("weekDay").innerHTML = "Sunday";
      }
 
     let gMonth = new Date().getMonth() + 1;
     let gDate = new Date().getDate();
     let gFullYear = new Date().getUTCFullYear();
 
-document.getElementById("time").innerHTML = gHours + ":" + gMinutes + ":" + gSeconds;
-document.getElementById("date").innerHTML = whichDay + " " + gMonth + "/" + gDate + "/" + gFullYear;
 
+    if (gHours >= 12) {
+      pam = "PM";
+    } else if (gHours < 12 || gHours === 24) {
+      pam = "AM";
+      }
 
-  if (h >= 12) {
-      document.getElementById("mornOrNight").innerHTML= "PM";
-    } else if (h < 12 || h === 24) {
-      document.getElementById("mornOrNight").innerHTML = "AM";
-    }
+document.getElementById("time").innerHTML = gHours + ":" + gMinutes + ":" + gSeconds + " " + pam;
+document.getElementById("date").innerHTML = gMonth + "/" + gDate + "/" + gFullYear;
 
+if (gHours >= 12) {
+  pam = "PM";
+} else if (gHours < 12 || gHours === 24) {
+  pam = "AM";
   }
+}
 
 </script>
 </body>
