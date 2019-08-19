@@ -61,7 +61,6 @@
       }
     let gDayOfWeek = new Date().getUTCDay();
 
-
      if (gDayOfWeek === 1) {
        document.getElementById("weekDay").innerHTML = "Monday";
      } else if (gDayOfWeek === 2) {
@@ -82,7 +81,6 @@
     let gDate = new Date().getDate();
     let gFullYear = new Date().getUTCFullYear();
 
-
     if (gHours >= 12) {
       pam = "PM";
     } else if (gHours < 12 || gHours === 24) {
@@ -91,14 +89,7 @@
 
 document.getElementById("time").innerHTML = gHours + ":" + gMinutes + ":" + gSeconds + " " + pam;
 document.getElementById("date").innerHTML = gMonth + "/" + gDate + "/" + gFullYear;
-
-if (gHours >= 12) {
-  pam = "PM";
-} else if (gHours < 12 || gHours === 24) {
-  pam = "AM";
-  }
 }
-
 </script>
 </body>
 </html>
