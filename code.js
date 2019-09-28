@@ -23,7 +23,7 @@ function timer1() {
      document.getElementById("weekDay").innerHTML = "Friday";
    } else if (gDayOfWeek === 6) {
      document.getElementById("weekDay").innerHTML = "Saturday";
-   } else if (gDayOfWeek === 7) {
+   } else if (gDayOfWeek === 0) {
      document.getElementById("weekDay").innerHTML = "Sunday";
    }
   let gMonth = date.getMonth() + 1;
